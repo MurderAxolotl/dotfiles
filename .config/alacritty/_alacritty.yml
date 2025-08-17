@@ -1,0 +1,27 @@
+import:
+#  - ~/.config/alacritty/colours/catppuccin-mocha.yml
+   - ~/.config/alacritty/colours/cyberpunkNeon.yml
+
+window:
+  dimensions:
+    columns: 150
+    lines: 31
+
+  padding:
+    x: 5
+    y: 5
+
+  opacity: 0.25
+  blur: true
+
+font:
+  size: 10
+  normal:
+    family: OverpassM Nerd Font
+    style: Medium
+
+shell:
+  program: /bin/bash
+  args:
+    - -c
+    - "tmux attach || tmux"

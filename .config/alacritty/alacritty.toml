@@ -1,0 +1,27 @@
+import = ["/home/theo/.config/alacritty/colours/midnight-haze.toml"]
+
+working_directory = "/home/theo/"
+
+[font]
+size = 10
+
+[font.normal]
+family = "OverpassM Nerd Font"
+style = "Medium"
+
+[shell]
+args = ["-c", "tmux attach || tmux"]
+program = "/bin/bash"
+
+[window]
+blur = true
+opacity = 0.85
+decorations = "Transparent"
+
+[window.dimensions]
+columns = 150
+lines = 31
+
+[window.padding]
+x = 5
+y = 5
