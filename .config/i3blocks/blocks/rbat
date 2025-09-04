@@ -1,0 +1,19 @@
+#!/bin/bash
+
+URGENT_VALUE=20
+BAT=$(curl -Ss kalaris:9990/percent)
+CHG=$(curl -Ss kalaris:9990/status)
+
+if [[ "${CHG}" = "Charging" ]]; then
+	printf '{"full_text":"  BAT: %s%% ++ "}\n' $BAT
+
+elif [[ "${CHG}" = "Discharging" ]]; then
+	printf '{"full_text":"  BAT: %s%% -- "}\n' $BAT
+
+else
+	printf '{"full_text":"  BAT: %s%%  "}\n' $BAT
+fi
+
+if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
+  exit 33
+fi
