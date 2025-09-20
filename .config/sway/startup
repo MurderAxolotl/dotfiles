@@ -1,0 +1,20 @@
+# Session setup
+exec export XDG_CURRENT_DESKTOP=SWAY
+exec "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_CURRENT_DESKTOP=sway
+
+exec sudo modprobe v4l2loopback
+
+exec export QT_QPA_PLATFORM=wayland
+exec export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+exec export GTK_THEME="Orchis-Purple-Dark-Compact"
+
+exec --no-startup-id xhost +local:
+
+# Userspace programs
+exec --no-startup-id mako &
+exec_always --no-startup-id eval `ssh-agent -s`
+exec_always --no-startup-id systemctl --user start lxpolkit
+
+#exec --no-startup-id /usr/bin/lxpolkit &

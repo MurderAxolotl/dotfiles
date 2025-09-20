@@ -1,0 +1,21 @@
+	"network": {
+		"format-wifi": "<span foreground='#e6cef2'>{ifname} {ipaddr}</span>",
+		"format-ethernet": "<span foreground='#cef2d7'>{ifname} {ipaddr}</span>",
+		"format-linked": "<span foreground='#f2e8ce'>{ifname} (No IP)</span>",
+		"format-disconnected": "<span foreground='#ed8a8d'>Offline</span>",
+		"tooltip-format-wifi": "Signal Strength: {signalStrength}%",
+	},
+"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15,
+		},
+		"format": "{capacity}%",
+		"format-warning": "<span foreground='#B1E3AD'>{capacity}%</span>",
+		"format-critical": "<span foreground='#E38C8F'>{capacity}%</span>",
+		"format-charging": "<span foreground='#B1E3AD'> {capacity}%</span>",
+		"format-plugged": "<span foreground='#B1E3AD'>? {capacity}%</span>",
+		"format-full": "<span foreground='#B1E3AD'>{capacity}%</span>",
+		"format-icons": [" ", " ", " ", " ", " "],
+		"tooltip-format": "{time}",
+	},

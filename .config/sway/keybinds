@@ -1,0 +1,56 @@
+set $mod Mod4
+
+# Lock the screen
+bindsym $mod+l exec --no-startup-id ~/.config/sway/swaylock.sh
+
+# Application menu
+bindsym $mod+d exec --no-startup-id wofi --show drun --style /home/theo/.config/wofi/catp/src/mocha/style.css
+
+# Run menu
+bindsym $mod+r exec --no-startup-id wofi --show run --style /home/theo/.config/wofi/catp/src/mocha/style.css
+
+# Resize
+bindsym $mod+Mod1+r mode "resize"
+
+# Screenshots
+bindsym $mod+Shift+s exec grimshot copy area
+#bindsym $mod+Shift+s exec wayfreeze & PID=$!; sleep .1; grimshot copy area; kill $PID
+#bindsym $mod+Shift+s exec wayfreeze --after-freeze-cmd 'grim -g "$(slurp) - | wl-copy; killall wayfreeze'
+#bindsym $mod+Shift+s exec screenshot_freeze &; grimshot copy area; killall wayfreeze
+bindsym $mod+Mod1+s exec grimshot copy screen
+
+###############
+## MediaKeys ##
+###############
+
+# KP Volume controls
+bindsym KP_Add exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym KP_Subtract exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# CKB media controls
+bindsym Print exec --no-startup-id playerctl previous
+bindsym Pause exec --no-startup-id playerctl next
+bindsym Scroll_Lock exec --no-startup-id playerctl play-pause
+
+# Volume controls
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left focus left
+bindsym $mod+Shift+Down focus down
+bindsym $mod+Shift+Up focus up
+bindsym $mod+Shift+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left move left
+bindsym $mod+Down move down
+bindsym $mod+Up move up
+bindsym $mod+Right move right

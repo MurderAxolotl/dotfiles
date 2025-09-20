@@ -1,0 +1,18 @@
+#for_window [class="(?i)floorp"] border none
+
+# No borders
+for_window [app_id="waterfox"] border none
+for_window [class="equibop"] border none
+
+# Floating Alacritty windows
+#for_window [class="AlacFloat"] floating enable
+for_window [title="AlacFloat"] floating enable, border pixel 3
+
+# Picture in picture
+for_window [title="Picture-in-Picture"] floating enable
+
+# File selection popups
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
+
+# Ensures Steam's popups are floating 
+for_window [title="^(?!Steam$).*$" instance="steamwebhelper"] floating enable

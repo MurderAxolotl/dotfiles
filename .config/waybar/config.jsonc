@@ -1,0 +1,68 @@
+{
+	"position": "top",
+	"modules-left": ["sway/workspaces"],
+	"modules-center": ["mpris"],
+	"modules-right": ["tray", "network", "bluetooth", "pulseaudio", "clock"],
+	// Modules configuration
+	"tray": {
+		"icon-size": 16,
+		"spacing": 6,
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+		},
+		"format-icons": {
+			"default": "( )",
+			"urgent": "(!)",
+			"focused": "(*)",
+		},
+	},
+	"mpris": {
+		"interval": 1,
+		"format": "{dynamic}",
+		"dynamic-order": ["title", "artist"],
+	},
+	"clock": {
+		// "format": "{:%a %d %H:%M}",
+		"format": "{:%H:%M}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
+	"network": {
+		"on-click": "alacritty --class AlacFloat -T AlacFloat -e nmtui",
+		"format-wifi": "<span foreground='#e6cef2'> </span>",
+		"format-ethernet": "<span foreground='#cef2d7'> </span>",
+		"format-linked": "<span foreground='#f08a7f'> (no IP) </span>",
+		"format-disconnected": "<span size='large'> </span>",
+		"tooltip-format-wifi": "{ifname} {ipaddr} {signalStrength}%\n{essid}",
+		"tooltip-format-ethernet": "{ifname} {ipaddr}",
+	},
+	"bluetooth": {
+		"on-click": "blueman-manager",
+		"format": " <span size='large'></span> ",
+		"format-disabled": " <span size='large'></span> ",
+		// "format-connected-battery": "  {device_battery_percentage}%",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
+	},
+	"pulseaudio": {
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format": "<span foreground='#EBDDAA'>{icon}{volume}%</span>",
+		"format-muted": "<span foreground='#EBDDAA'>Muted</span>",
+		"format-icons": {
+			"headphone": " ",
+			"hands-free": " ",
+			"headset": " ",
+			"phone": " ",
+			"portable": " ",
+			"car": " ",
+			"default": [" ", " "],
+		},
+	},
+}
