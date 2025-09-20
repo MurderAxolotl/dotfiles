@@ -2,6 +2,10 @@ import = ["/home/theo/.config/alacritty/colours/midnight-haze.toml"]
 
 working_directory = "/home/theo/"
 
+[env]
+term = "xterm-256color"
+TERM = "xterm-256color"
+
 [font]
 size = 10
 

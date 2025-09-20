@@ -127,6 +127,7 @@ alias neofetch="hyfetch --distro Ubuntu"
 
 # Forcefully ensures Github recognizes who I am
 ssh-add ~/.ssh/staticbridge_git > /dev/null 2>&1
+#ssh-add ~/.ssh/staticbridge_git
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
