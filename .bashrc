@@ -126,6 +126,8 @@ alias htop=btop
 alias neofetch="hyfetch --distro Ubuntu"
 
 # Forcefully ensures Github recognizes who I am
+eval `ssh-agent -s` > /dev/null 2>&1
+
 ssh-add ~/.ssh/staticbridge_git > /dev/null 2>&1
 #ssh-add ~/.ssh/staticbridge_git
 
